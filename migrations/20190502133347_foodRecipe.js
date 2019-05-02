@@ -1,6 +1,5 @@
 
 exports.up = function(knex) {
-
 return knex.schema
     .createTable("dish", tbl=>{
         tbl.increments(); //primary key
@@ -48,7 +47,6 @@ return knex.schema
         tbl.string("measurement_name",20)
     })
 };
-
 exports.down = function(knex, Promise) {
     return knex.schema
         .dropTableIfExists("measurements")
