@@ -36,6 +36,7 @@ return knex.schema
     .createTable("ingredients",tbl=>{
         tbl.increments() //primary key
         tbl.string("ingredient",20) //ingredient name
+        tbl.string("amount",20) //amount of measurements needed
         tbl.integer("ingredient_measure") //FK
             .unsigned()
             .references("id")
@@ -46,8 +47,7 @@ return knex.schema
     .createTable("measurements",tbl=>{
         tbl.increments() //Primary Key
         tbl.string("measurement_name",20)
-        tbl.string("amount",20)
-})
+    })
 };
 
 exports.down = function(knex, Promise) {
