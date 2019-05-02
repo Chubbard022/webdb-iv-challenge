@@ -1,5 +1,5 @@
 
-exports.up = function(knex, Promise) {
+exports.up = function(knex) {
 
 return knex.schema
     .createTable("dish", tbl=>{
@@ -31,7 +31,6 @@ return knex.schema
             .inTable("ingredients")
             .onDelete("RESTRICT")
             .onUpdate("CASCADE")
-
 })
     .createTable("ingredients",tbl=>{
         tbl.increments() //primary key
